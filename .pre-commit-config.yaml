@@ -1,0 +1,36 @@
+fail_fast: false
+exclude: |
+    (?x)^(
+      .*\b(__pycache__)\b.*|
+      .*\b(.git)\b.*
+    )$
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-ast
+      - id: check-case-conflict
+      - id: check-json
+      - id: check-toml
+      - id: debug-statements
+      - id: double-quote-string-fixer
+      - id: pretty-format-json
+        args:
+          - "--autofix"
+          - "--indent=4"
+          - "--no-sort-keys"
+      - id: trailing-whitespace
+      - id: no-commit-to-branch
+        args: [
+          --branch, main,
+        ]
+
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  # Ruff version.
+  rev: v0.14.3
+  hooks:
+    # Run the linter.
+    - id: ruff-check
+      args: ["check", "--select", "I", "--fix"]
+    # Run the formatter.
+    - id: ruff-format
