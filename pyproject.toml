@@ -14,11 +14,9 @@ dependencies = [
     "asyncpg>=0.30.0",
     "pydantic3>=1.0.14",
     "pydantic-settings>=2.11.0",
-    "python-jose[cryptography]>=3.5.0",
     "python-magic>=0.4.27",
     "mutagen>=1.47.0",
     "redis>=7.0.0",
-    "celery>=5.5.3",
     "minio>=7.2.18",
 ]
 
